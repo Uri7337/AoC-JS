@@ -1,6 +1,23 @@
-// ES6 Modules (import / export)
-import { greet,greet1 } from './day1_2.js';
+import { readTestFile,readProdFile } from "./day1.js";
 
-greet(); 
+//let data = await readTestFile();
+let data = await readProdFile();
 
-greet1(); 
+var bob = data.split("");
+var counter = 0;
+
+for (let i = 0; i < bob.length; i++) {
+    const element = bob[i];
+    if (element === "("){
+        counter++
+    }else{
+        counter--;
+    }
+
+}
+
+console.log("result: "+counter);
+
+if(counter===138){
+console.log("*Solved*:",counter===138);
+}
