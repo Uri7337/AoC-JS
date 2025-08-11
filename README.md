@@ -1,9 +1,7 @@
 # AoC-JS
 Rep for Advent of Code in JavaScript
 
-## Sample .vscode
-
-### launch.json
+## Sample .vscode/launch.json
 
 ```json
 {
