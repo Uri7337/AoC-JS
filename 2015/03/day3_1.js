@@ -1,12 +1,66 @@
 import { readTestFile, readProdFile } from "./day3.js";
 
-//let data = await readTestFile();
-let data = await readProdFile();
+let prod = true;
+let data;
 
-let bob = data.split("\n");
-let counter = 0;
+if (prod == true) {
+  data = await readProdFile();
+} else {
+  data = await readTestFile();
+}
 
+let bob = data.split("");
+let counter = 1;
+let x = 0;
+let y = 0;
 
+let locHistory = [];
+
+class Location {
+  constructor(x,y){
+    this.x = x;
+    this.y = y;
+  }
+
+  compareValues(x, y) {
+    return this.x === x && this.y === y;
+  }
+};
+
+locHistory.push(new Location(0,0));
+
+function searchHistory(x, y, locHistory) {
+  let foundMatch = false;
+  locHistory.forEach((previousLocation) => {
+    if (previousLocation.compareValues(x, y)) {
+      foundMatch = true;
+    }
+  });
+  return foundMatch;
+}
+
+for (let index = 0; index < bob.length; index++) {
+  const move = bob[index];
+  switch (move) {
+    case "^":
+      y++;
+      break;
+    case ">":
+      x++;
+      break;
+    case "v":
+      y--;
+      break;
+    case "<":
+      x--;
+      break;
+  }
+  if (!searchHistory(x, y, locHistory)) {
+    locHistory.push(new Location(x,y));
+    counter++;
+  }
+  //console.log(move);
+}
 
 console.log("result: " + counter);
 
