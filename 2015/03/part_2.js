@@ -1,12 +1,12 @@
-import { readTestFile, readProdFile } from "./day3.js";
+import { readTestFile, readProdFile } from "../../other/readFile.js";
 
-let prod = true;
+let prod = false;
 let data;
 
 if (prod == true) {
-  data = await readProdFile();
+  data = await readProdFile("03");
 } else {
-  data = await readTestFile();
+  data = await readTestFile("03");
 }
 
 let bob = data.split("");

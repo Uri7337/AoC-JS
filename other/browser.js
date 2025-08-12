@@ -1,7 +1,11 @@
 const { execFile } = require('child_process');
 
 // Cesta k Chrome.exe bez uvozovek
-const chromePath = 'C:/Program Files/Google/Chrome/Application/chrome.exe';
+//W11
+//const chromePath = 'C:/Program Files/Google/Chrome/Application/chrome.exe';
+//Linux
+const chromePath = '/usr/bin/google-chrome';
+
 
 // URL, které se má otevřít
 const url = 'https://adventofcode.com/2015/day/3';
