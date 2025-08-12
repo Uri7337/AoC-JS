@@ -1,14 +1,14 @@
 import { readTestFile,readProdFile } from "./day2.js";
 
-//let data = await readTestFile();
-let data = await readProdFile();
+let data = await readTestFile();
+//let data = await readProdFile();
 
-var bob = data.split("");
-var counter = 0;
+let bob = data.split("");
+let counter = 0;
 
+console.log(data);
 
-
-console.log("result: "+counter);
+//console.log("result: "+counter);
 
 if(counter===1586300){
 console.log("*Solved*");
